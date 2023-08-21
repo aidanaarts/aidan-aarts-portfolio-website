@@ -268,12 +268,6 @@ section.hero:after {
 section.two {
   background-color: #efefef;
 }
-.contact-section h2 {
-  filter:invert(0);
-}
-.contact-section{
-  align-items:center;
-}
 .projects-section h2{
   z-index: 400;
 }
@@ -286,7 +280,12 @@ section.four {
 section.five {
   background-color: #29639c;
 }
-
+.contact {
+  background-color: #29639c;
+  min-height: 600px;
+  height: 600px;
+  width: 100%;
+}
 @media screen and (min-width: 1200px) {
   .hero {
     height: 75vh;
@@ -345,6 +344,79 @@ section.five {
     font-size: 12vw;
   }
   .hero #video-bg {
-    object-position: 0 30vw;
+    object-position: 0 0vw;
   }
+}
+.contact-section {
+  border: 1px solid;
+  max-width: 350px;
+  margin: 30px;
+  position: relative;
+  top: 50%;
+  background-color: #fff;
+  align-items: center;
+  box-shadow: 10px 10px;
+
+}
+.contact-section h2 {
+  text-align: center;
+  margin:10px;
+}
+.contact-form .form-field{
+  position: relative;
+  margin: 10px 0;
+}
+.contact-form input {
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  background-color: #dadad3;
+}
+
+.contact .row {
+  justify-content: center;
+
+}
+.contact-form .input-text {
+  display: block;
+  width: 100%;
+  height: 36px;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+}
+.label {
+  position: absolute;
+  left: 20px;
+  top: 5px;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #888;
+  cursor: text;
+  transition: transform .2s ease-in-out;
+}
+.submit-btn {
+  font-weight:600;
+}
+.submit-btn:hover {
+  background-color: rgb(132, 245, 132);
+}
+.submit-btn:after {
+  width:100px;
+}
+
+#message {
+  height:200px;
+}
+.title-row {
+  padding:0px;
+  border-bottom:2px solid;
+}
+
+
+/* Footer Style */
+
+.footer {
+  border-top: 1px solid;
+  padding:40px;
+  background-color: #29639c;
 }
