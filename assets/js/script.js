@@ -3,7 +3,11 @@ $( "#nav-btn" ).on( "click", function() {
   $('.sticky-nav').toggleClass("difference");
 });
 
+$( "#contact-btn" ).on( "click", function() {
+	$('#takeover-nav').toggleClass("shown");
+	$('.sticky-nav').toggleClass("difference");
 
+  });
 
 ///Initiation Variables
 var icon_1 = document.getElementById("nav-btn");
@@ -22,6 +26,7 @@ var topLeftX_1;
 var topRightX_1;
 var bottomLeftX_1;
 var bottomRightX_1;
+var contact_btn = document.getElementById("contact-btn");
 
 ///Animation Variables
 var segmentDuration_1 = 15;
@@ -35,11 +40,11 @@ var arrowDisappearComplete_1 = false;
 var menuAppearComplete_1 = false;
 var currentFrame_1 = 1;
 
-///Menu Disappear 
+///Menu Disappear
 function menuDisappearAnimation_1() {
 	currentFrame_1++;
 	if ( currentFrame_1 <= menuDisappearDurationInFrames_1 ) {
-		window.requestAnimationFrame( ()=> { 
+		window.requestAnimationFrame( ()=> {
 			//top line
 			topLineY_1 = AJS.easeInBack( 37, 50, menuDisappearDurationInFrames_1, currentFrame_1 );
 			topLine_1.setAttribute( "d", "M30,"+topLineY_1+" L70,"+topLineY_1 );
@@ -61,7 +66,7 @@ function menuDisappearAnimation_1() {
 function arrowAppearAnimation_1() {
 	currentFrame_1++;
 	if ( currentFrame_1 <= arrowAppearDurationInFrames_1 ) {
-		window.requestAnimationFrame( ()=> { 
+		window.requestAnimationFrame( ()=> {
 			//top line
 			topLeftX_1 = AJS.easeOutBack( 30, 35, arrowAppearDurationInFrames_1, currentFrame_1 );
 			topLeftY_1 = AJS.easeOutBack( 50, 35, arrowAppearDurationInFrames_1, currentFrame_1 );
@@ -86,7 +91,7 @@ function arrowAppearAnimation_1() {
 
 ///Combined Open Menu Animation
 function openMenuAnimation_1() {
-	if ( !menuDisappearComplete_1 ) { 
+	if ( !menuDisappearComplete_1 ) {
 		menuDisappearAnimation_1();
 	} else if ( !arrowAppearComplete_1) {
 		arrowAppearAnimation_1();
@@ -152,7 +157,8 @@ function closeMenuAnimation_1() {
 }
 
 ///Events
-icon_1.addEventListener( "click", ()=> { 
+
+icon_1.addEventListener( "click", ()=> {
   if ( state_1 === "menu" ) {
   	openMenuAnimation_1();
   	state_1 = "arrow";
@@ -165,6 +171,21 @@ icon_1.addEventListener( "click", ()=> {
 		arrowAppearComplete_1 = false;
   }
 });
+
+contact_btn.addEventListener( "click", ()=> {
+	if ( state_1 === "menu" ) {
+		openMenuAnimation_1();
+		state_1 = "arrow";
+		arrowDisappearComplete_1 = false;
+		  menuAppearComplete_1 = false;
+	} else if ( state_1 === "arrow" ) {
+		closeMenuAnimation_1();
+		state_1 = "menu";
+		menuDisappearComplete_1 = false;
+		  arrowAppearComplete_1 = false;
+	}
+  });
+
 
 
 // Cursor
@@ -203,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       left: mouseX + "px"
     });
   };
-  
+
   window.ontouchmove = function(e) {
     var mouseX = e.touches[0].clientX;
     var mouseY = e.touches[0].clientY;
@@ -233,13 +254,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
       opacity: 1
     });
   };
-  
+
   window.ontouchend = function(e) {
     setTimeout( function() {
       TweenLite.to(cursor, 0.3, {
         opacity: 0
       });
-    }, 200);   
+    }, 200);
   };
-  
+
 });
