@@ -210,9 +210,9 @@ a {
 .gradient-overlay {
   bottom: 0;
   height: 30%;
-  background: -moz-linear-gradient(top, rgba(33, 33, 33, 0) 0%, #212121 50%);
-  background: -webkit-linear-gradient(top, rgba(33, 33, 33, 0) 0%, #212121 50%);
-  background: linear-gradient(to bottom, rgba(33, 33, 33, 0) 0%, #212121 50%);
+  background: -moz-linear-gradient(top, rgba(33, 33, 33, 0) 0%, #0f172a 50%);
+  background: -webkit-linear-gradient(top, rgba(33, 33, 33, 0) 0%, #0f172a 50%);
+  background: linear-gradient(to bottom, rgba(33, 33, 33, 0) 0%, #0f172a 50%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#00212121", endColorstr="#212121",GradientType=0 );
   z-index: 1;
   border-bottom-right-radius: 15vw;
@@ -245,13 +245,13 @@ section {
   width: 100%;
 }
 section.hero {
-  background-color: #212121;
+  background-color: #0f172a;
   border-bottom-right-radius: 15vw;
   position: relative;
 }
 section.hero:before {
   content: "";
-  background-color: #212121;
+  background-color: #0f172a;
   position: absolute;
   top: 100%;
   left: 0;
@@ -268,17 +268,85 @@ section.hero:after {
   height: 15vw;
   border-top-left-radius: 15vw;
 }
-section.two {
-  background-color: #efefef;
-  height:1500px;
+.hide {
+  opacity:0;
+  transition:all 1s;
 }
-.projects-section h2{
-  text-align: center;
-  margin-top: 40px;
+.show-card {
+  opacity:1;
 }
 section.projects {
   background-color: #e8d1f6;
+  height:800px;
 }
+.about-card {
+  justify-content: center;
+  border: 1px solid;
+  max-width: 350px;
+  margin: 30px;
+  position: relative;
+  top: 50%;
+  background-color: #fff;
+  align-items: center;
+  box-shadow: 10px 10px;
+  height:100%;
+}
+.about-text {
+  width:70vw;
+}
+.project-card {
+  border: 1px solid;
+  max-width: 350px;
+  margin: 30px;
+  position: relative;
+  top: 50%;
+  background-color: #fff;
+  align-items: center;
+  box-shadow: 10px 10px;
+  height:100%;
+}
+.project-card .title-row h2 {
+  position:absolute;
+  bottom:50px;
+}
+/* About Me Section */
+section.about-me{
+  background-color: #efefef;
+}
+.about-me .title{
+  margin-top: 135px;
+}
+.about-col {
+  margin:10px;
+  text-align:center;
+}
+.about-me .title h2{
+  padding-top: 40px;
+}
+.socials {
+  text-align: center;
+}
+.socials ul {
+  display:inline-flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.socials ul li i {
+  display:inline-block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 30px;
+}
+.socials i:hover {
+    color:#00BCD4;
+    transition:all 0.25s;
+    font-size:40px;
+}
+
+/*End About Me Section*/
 section.four {
   background-color: #00BCD4;
 }
@@ -437,6 +505,15 @@ section.five {
   max-width: 400px;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  border:none;
+}
+.card-grid {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.card img {
+  padding:15px;
+  border-radius: 22px;
 }
 .card:hover {
   transform: scale(1.05);
@@ -460,7 +537,6 @@ section.five {
 }
 .card .buttons {
   display: flex;
-  flex-direction: row-reverse;
   margin: 1rem;
 }
 .card .buttons input[type="button"] {
@@ -489,4 +565,14 @@ section.five {
   border-top: 1px solid;
   padding:40px;
   background-color: #29639c;
+}
+
+a {
+  text-decoration: none;
+}
+
+.about-body {
+  margin-top: 60px;
+  margin-right: 40px;
+  margin-left: 40px;
 }

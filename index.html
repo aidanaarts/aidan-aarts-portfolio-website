@@ -41,28 +41,31 @@
                 </li>
               </ul>
               <div class='social'>
-                <a class='text-decoration-none green' href='#'>linkedin</a>
+                <a class='text-decoration-none green' href='https://www.linkedin.com/in/aidan-aarts/' target="_blank">LinkedIn</a>
                 <span class='mx-2 white'>
                   |
                 </span>
-                <a class='text-decoration-none green' href='#'>facebook</a>
+                <a class='text-decoration-none green' href='https://github.com/aidanaarts' target="_blank">Github</a>
                 <span class='mx-2 white'>
                   |
                 </span>
-                <a class='text-decoration-none green' href='#'>instagram</a>
+                <a class='text-decoration-none green' href='https://github.com/aidanaarts' target="_blank">Resume</a>
               </div>
             </div>
           </div>
           <div class='nav-col nav-menu col-12 col-md-5 bg-green d-flex align-items-center pt-5 pb-3 pb-md-5 px-3 px-md-5 order-0 order-md-1'>
             <ul class='nav-items list-unstyled'>
-              <li class='pb-3'>
-                <a class='text-decoration-none' href='#'>Projects</a>
+              <li class='pb-3' id="home-btn">
+                <a class='text-decoration-none' href='#home'>Home</a>
               </li>
-              <li class='pb-3'>
-                <a class='text-decoration-none' href='#'>Projects</a>
+              <li class='pb-3' id="projects-btn">
+                <a class='text-decoration-none' href='#projects'>Projects</a>
+              </li>
+              <li class='pb-3' id="about-me-btn">
+                <a class='text-decoration-none' href='#aboutMe'>About Me</a>
               </li>
               <li class='pb-3' id="contact-btn">
-                <a class='text-decoration-none' href='#contact'>contact</a>
+                <a class='text-decoration-none' href='#contact'>Contact</a>
               </li>
             </ul>
           </div>
@@ -70,7 +73,7 @@
       </div>
     </div>
   </header>
-  <section class='hero d-flex align-items-center justify-content-center'>
+  <section id="home" class='hero d-flex align-items-center justify-content-center'>
     <div class='video-wrap'>
       <video autoplay="" playsinline="" loop="" muted="" id="video-bg">
       <source src="assets/img/mountains.mp4" type="video/mp4">
@@ -79,88 +82,70 @@
     <div class='position-absolute w-100 gradient-overlay'></div>
     <div class='content position-relative text-center mb-5'>
       <h1 class='hero-title blend'>
- I'm a front end developer
+        <a href="" class="typewrite" data-period="2000" data-type='[ "Hi, im Aidan Aarts." , "Im a Frontend Developer." ]'></a>
       </h1>
     </div>
   </section>
-  <section class='two'>
+  <section id="aboutMe"class='about-me'>
+    <div class="about-me">
+      <div class="title">
+        <h2>About Me</h2>
+      </div>
+      <div class="about-body">
+        <div class=row>
+          <div class="col about-col">
+            <div class="body-title"><h4>Frontend Developer</h4></div>
+            <div class="body-paragraph"><p>I'm a passionate front-end developer with a dedicated focus on crafting engaging digital experiences. In 2021 I graduated from the University of Colorado Boulder with a bachelors degree in computer science. During my undergrad I learned all the computer science fundamentals in algorithms and data structures, but UI/UX design and accessibility is where I really found my stride. </p></div>
+          </div>
+          <div class="col about-col">
+            <div class="body-title"><h4>Salesforce Professional</h4></div>
+            <div class="body-paragraph"><p>I am a certified Salesforce Commerce Cloud Developer. I've had the privilege of contributing to projects for renowned brands, taking them from concept discovery all the way to launch. With a substantial two-year tenure as a Salesforce Commerce Cloud developer, I've acquired an in-depth understanding of e-commerce intricacies.</p>
+            </div>
+          </div>
+          <div class="col about-col">
+            <div class="body-title"><h4>UI/UX Enthusiast</h4></div>
+            <div class="body-paragraph"><p>Fueled by a passion for creating captivating UI/UX designs that transcend conventional boundaries. My dedication to inclusivity shines through my focus on accessibility, ensuring that every user can enjoy a seamless and engaging digital experience. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class=socials>
+        <ul>
+          <li><i class="fa-brands fa-linkedin"></i></li>
+          <li><i class="fa-brands fa-github"></i></li>
+          <li><i class="fa-solid fa-file"></i></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+  <section id="projects" class='projects'>
     <div class="projects-section">
-      <h2>Projects</h2>
+      <div class="title">
+        <h2>Projects</h2>
+      </div>
       <div class="row">
         <div class="col">
-          <div class="card">
-            <img src="assets/img/mathis.png" alt="post-img" />
-            <div class="texts">
-                <h2>Full Life Cycle E-commerce Website</h2>
-                <p>
-                    Using Salesforce Commerce Cloud my team and I built the website for Mathis Brothers Furniture.
-                </p>
-            </div>
-            <div class="buttons">
-                <input type="button" value="Live Demo" />
+          <div class="project-card">
+            <div class=title-row>
+              <h2>1.</h2>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card">
-            <img src="assets/img/mathis.png" alt="post-img" />
-            <div class="texts">
-                <h2>Full Life Cycle E-commerce Website</h2>
-                <p>
-                    Using Salesforce Commerce Cloud my team and I built the website for Mathis Brothers Furniture.
-                </p>
-            </div>
-            <div class="buttons">
-                <input type="button" value="Live Demo" />
+          <div class="project-card">
+            <div class=title-row>
+              <h2>2.</h2>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="row">
-        <div class="col">
-          <div class="card">
-            <img src="assets/img/mathis.png" alt="post-img" />
-            <div class="texts">
-                <h2>Full Life Cycle E-commerce Website</h2>
-                <p>
-                    Using Salesforce Commerce Cloud my team and I built the website for Mathis Brothers Furniture.
-                </p>
-            </div>
-            <div class="buttons">
-                <input type="button" value="Live Demo" />
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img src="assets/img/mathis.png" alt="post-img" />
-            <div class="texts">
-                <h2>Full Life Cycle E-commerce Website</h2>
-                <p>
-                    Using Salesforce Commerce Cloud my team and I built the website for Mathis Brothers Furniture.
-                </p>
-            </div>
-            <div class="buttons">
-                <input type="button" value="Live Demo" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-    </div>
-  </section>
-  <section class='projects'>
-    <!--MATERIAL Design-->
-    <div class="title">
-      <h2>About Me</h2>
     </div>
   </section>
 
-  <section class='four'></section>
-
-  <!--Contanct Section-->
+  <!--Contact Section-->
   <div id=contact class='contact'>
     <div class="row">
       <div class="contact-section">
@@ -179,7 +164,7 @@
             <input id="message" class="input-text js-input" type="text" placeholder="Message" required>
          </div>
          <div class="form-field col x-100 align-center">
-          <input class="submit-btn" type="submit" value="Send">
+          <input id="submit-btn" class="submit-btn" type="submit" value="Send">
        </div>
         </form>
       </div>
@@ -196,7 +181,12 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js'></script>
 <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/409445/animateAnything.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js'></script><script  src="assets/js/script.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js'></script>
+<script src="assets/js/script.js"></script>
+<script defer src="assets/js/app.js"></script>
+
+<!--Icons-->
+<script src="https://kit.fontawesome.com/9283397ccd.js" crossorigin="anonymous"></script>
 
 </body>
 </html>

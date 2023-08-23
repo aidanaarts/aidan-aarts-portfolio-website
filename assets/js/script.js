@@ -7,8 +7,24 @@ $( "#contact-btn" ).on( "click", function() {
 	$('#takeover-nav').toggleClass("shown");
 	$('.sticky-nav').toggleClass("difference");
 
-  });
+});
+$( "#about-me-btn" ).on( "click", function() {
+	$('#takeover-nav').toggleClass("shown");
+	$('.sticky-nav').toggleClass("difference");
 
+});
+
+$("#home-btn" ).on( "click", function() {
+	$('#takeover-nav').toggleClass("shown");
+	$('.sticky-nav').toggleClass("difference");
+
+});
+
+$("#projects-btn" ).on( "click", function() {
+	$('#takeover-nav').toggleClass("shown");
+	$('.sticky-nav').toggleClass("difference");
+
+});
 ///Initiation Variables
 var icon_1 = document.getElementById("nav-btn");
 var topLine_1 = document.getElementById("top-line-1");
@@ -26,7 +42,10 @@ var topLeftX_1;
 var topRightX_1;
 var bottomLeftX_1;
 var bottomRightX_1;
+var home_btn = document.getElementById("home-btn")
+var projects_btn = document.getElementById("projects-btn");
 var contact_btn = document.getElementById("contact-btn");
+var about_me_btn = document.getElementById("about-me-btn");
 
 ///Animation Variables
 var segmentDuration_1 = 15;
@@ -171,8 +190,35 @@ icon_1.addEventListener( "click", ()=> {
 		arrowAppearComplete_1 = false;
   }
 });
-
+/*Contact link btn */
 contact_btn.addEventListener( "click", ()=> {
+	if ( state_1 === "menu" ) {
+		openMenuAnimation_1();
+		state_1 = "arrow";
+		arrowDisappearComplete_1 = false;
+		  menuAppearComplete_1 = false;
+	} else if ( state_1 === "arrow" ) {
+		closeMenuAnimation_1();
+		state_1 = "menu";
+		menuDisappearComplete_1 = false;
+		  arrowAppearComplete_1 = false;
+	}
+  });
+/* About Me Btn */
+  about_me_btn.addEventListener( "click", ()=> {
+	if ( state_1 === "menu" ) {
+		openMenuAnimation_1();
+		state_1 = "arrow";
+		arrowDisappearComplete_1 = false;
+		  menuAppearComplete_1 = false;
+	} else if ( state_1 === "arrow" ) {
+		closeMenuAnimation_1();
+		state_1 = "menu";
+		menuDisappearComplete_1 = false;
+		  arrowAppearComplete_1 = false;
+	}
+  });
+  home_btn.addEventListener( "click", ()=> {
 	if ( state_1 === "menu" ) {
 		openMenuAnimation_1();
 		state_1 = "arrow";
@@ -264,3 +310,168 @@ document.addEventListener("DOMContentLoaded", function(event) {
   };
 
 });
+
+/*Typewriter animation for header */
+var TxtType = function(el, toRotate, period) {
+	this.toRotate = toRotate;
+	this.el = el;
+	this.loopNum = 0;
+	this.period = parseInt(period, 10) || 2000;
+	this.txt = '';
+	this.tick();
+	this.isDeleting = false;
+};
+
+TxtType.prototype.tick = function() {
+	var i = this.loopNum % this.toRotate.length;
+	var fullTxt = this.toRotate[i];
+
+	if (this.isDeleting) {
+	this.txt = fullTxt.substring(0, this.txt.length - 1);
+	} else {
+	this.txt = fullTxt.substring(0, this.txt.length + 1);
+	}
+
+	this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+	var that = this;
+	var delta = 200 - Math.random() * 100;
+
+	if (this.isDeleting) { delta /= 2; }
+
+	if (!this.isDeleting && this.txt === fullTxt) {
+	delta = this.period;
+	this.isDeleting = true;
+	} else if (this.isDeleting && this.txt === '') {
+	this.isDeleting = false;
+	this.loopNum++;
+	delta = 500;
+	}
+
+	setTimeout(function() {
+	that.tick();
+	}, delta);
+};
+
+window.onload = function() {
+	var elements = document.getElementsByClassName('typewrite');
+	for (var i=0; i<elements.length; i++) {
+		var toRotate = elements[i].getAttribute('data-type');
+		var period = elements[i].getAttribute('data-period');
+		if (toRotate) {
+		  new TxtType(elements[i], JSON.parse(toRotate), period);
+		}
+	}
+	// INJECT CSS
+	var css = document.createElement("style");
+	css.type = "text/css";
+	css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+	document.body.appendChild(css);
+};
+
+
+/*Animate*/
+
+const observer = new IntersectionObserver((entries) => {
+	entries.forEach((entry) => {
+		console.log(entry);
+		if (entry.isIntersecting) {
+			entry.target.classList.add('show-card');
+		} else {
+			entry.target.classList.remove('show-card');
+		}
+	});
+});
+
+const hiddenElements = document.querySelectorAll('.projects');
+hiddenElements.forEach((el) => observer.observe(el));
+
+
+class SpyClass {
+	constructor(classesList) {
+	  //inProgress prevents events from firing when element manipulations are taking place
+	  this.inProgress = false;
+	  //the array to hold elements to be shown
+	  this.elements = [];
+	  //populate the array with elements, classes of which have been passed
+	  this.populateElements(classesList);
+	  //attach listening to window scrolling
+	  this.windowListen();
+	}
+
+	populateElements(classesList) {
+	  classesList.forEach(element => {
+		//grab a collection of each class
+		let collection = document.getElementsByClassName(element);
+		let l = collection.length;
+		//grab each individual element
+		for (let x = 0; x < l; x++) {
+		  let el = collection[x];
+		  //push the element, it's position and its class to the array
+		  this.elements.push({
+			htmlElement: el,
+			position: el.offsetTop,
+			elClass: element
+		  });
+		}
+	  });
+	}
+
+	windowListen() {
+	  //on scroll check if any element in the array comes into view
+	  window.addEventListener("scroll", this.checkPosition.bind(this));
+	}
+	windowStopListening() {
+	  window.removeEventListener("scroll", this.checkPosition);
+	}
+
+	checkPosition() {
+	  //don't do anything if there's work in progress
+	  //or if there are no elements to watch
+	  if (this.inProgress == false && this.elements.length > 0) {
+		//start working
+		this.inProgress = true;
+		//the array will hold indexes of elements that are to be shown, they will later be removed from the elements array to reduce its size
+		let forRemoval = [];
+
+		let check = new Promise((resolve, reject) => {
+		  let topOffset = window.pageYOffset + window.innerHeight / 2;
+		  let maxIndex = this.elements.length;
+
+		  for (let x = 0; x < maxIndex; x++) {
+			//console.log(`element offset: ${this.elements[x].position} page offset: ${topOffset}`);
+			if (this.elements[x].position < topOffset) {
+			  this.elements[x].htmlElement.classList.remove(
+				this.elements[x].elClass
+			  );
+			  forRemoval.push(x);
+			}
+		  }
+		  resolve(forRemoval);
+		});
+
+		check
+		  .then(forRemoval => {
+			//remove all elements that have been shown
+			//iterate from end not to mess things up, max index
+			//length -1
+			let x = forRemoval.length - 1;
+			for (x; x >= 0; x--) {
+			  this.elements.splice(forRemoval[x], 1);
+			}
+		  })
+		  .then(() => {
+			//elements removed, proceed listening
+			this.inProgress = false;
+		  });
+	  } else if (this.elements.length == 0) {
+		//remove event listener as soon as there are no elements to show
+		this.windowStopListening();
+	  }
+	}
+  }
+  let hiddenClasses = [];
+
+  for (let x = 0; x < 10; x++) hiddenClasses.push(`hidden${x}`);
+
+  let popper = new SpyClass(hiddenClasses);
