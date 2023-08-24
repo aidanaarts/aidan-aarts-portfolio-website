@@ -42,7 +42,6 @@ h1 {
   font-weight: 900;
 }
 .hero-title:hover {
-  background-color: #00BCD4;
   filter: invert(1);
 }
 
