@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Aidan Aarts | Web Developer</title>
+  <title>Aidan Aarts | Frontend Developer</title>
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css'><link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" href="assets/img/Win95PaintLogo.webp">
 
@@ -50,7 +50,7 @@
                 <span class='mx-2 white'>
                   |
                 </span>
-                <a class='text-decoration-none green' href='https://github.com/aidanaarts' target="_blank">Resume</a>
+                <a class='text-decoration-none green' href='assets/img/frontend-developer-portfolio-resume.pdf' target="_blank">Resume</a>
               </div>
             </div>
           </div>
@@ -97,7 +97,7 @@
           <div class="col about-col">
             <img src="assets/img/port1.png">
             <div class="body-title"><h4>Frontend Developer</h4></div>
-            <div class="body-paragraph"><p>I'm a passionate front-end developer with a dedicated focus on crafting engaging digital experiences. In 2021 I graduated from the University of Colorado Boulder with a <strong><span style="color: #29639c;">bachelors degree</span></strong> in computer science. During my undergrad I learned all the computer science fundamentals in <strong><span style="color: #29639c;">algorithms and data structures</span></strong>, but UI/UX design and accessibility is where I really found my stride. </p></div>
+            <div class="body-paragraph"><p>I'm a passionate front-end developer with a dedicated focus on crafting engaging digital experiences. In 2021 I <strong><graduated style="color: #29639c;">graduated </strong></span>from the University of Colorado Boulder with a <strong><span style="color: #29639c;">bachelors degree</span></strong> in <strong><computer style="color: #29639c;">computer science</strong></span>. During my undergrad I learned all the computer science fundamentals in <strong><span style="color: #29639c;">algorithms and data structures</span></strong>, but UI/UX design and accessibility is where I really found my stride. </p></div>
           </div>
           <div class="col about-col">
             <img src="assets/img/port2.png">
@@ -117,9 +117,9 @@
 
       <div class=socials>
         <ul>
-          <li><i class="fa-brands fa-linkedin"></i></li>
-          <li><i class="fa-brands fa-github"></i></li>
-          <li><i class="fa-solid fa-file"></i></li>
+          <li><a class="fa-brands fa-linkedin" href="https://www.linkedin.com/in/aidan-aarts/" target="_blank"></a></li>
+          <li><a class="fa-brands fa-github" href="https://github.com/aidanaarts" target="_blank"></a></li>
+          <li><a class="fa-solid fa-file" href="assets/img/frontend-developer-portfolio-resume.pdf" target="_blank"></a></li>
         </ul>
       </div>
 
@@ -144,8 +144,7 @@
             <p class="desc">
               A full life cycle project on Salesforce Commerce Cloud building a e commerce store for a prominent furniture retailer.
             </p>
-            <button class="button-1">Check it out</button>
-
+            <a class="button-1" href="https://www.mathishome.com/mathis-home" target="_blank">Live Demo</a>
           </div>
         </div>
         <div class="poster-card">
@@ -158,22 +157,39 @@
               <span class="tag">UI Design</span>
             </div>
             <p class="desc">
-              A simple social application made for friends to check in when doing something they wanted friends to know about.
+              A simple social application made for friends to check in when doing something noteworthy.
             </p>
+          </div>
+        </div>
+        <div class="poster-card">
+          <div class="poster"><img src="assets/img/full-tilt.png" alt="Location Unknown"></div>
+          <div class="details">
+            <h1>E-Commerce Site for Full Tilt</h1>
+            <div class="tags">
+              <span class="tag">Javascript</span>
+              <span class="tag">ISML</span>
+              <span class="tag">SCSS</span>
+              <span class="tag">SFCC</span>
+            </div>
+            <p class="desc">
+              As part of an internship program i built an exact replica of the Full Tilt ski boots site on Salesforce Commerce Cloud.
+            </p>
+            <a class="button-1" href="https://fulltiltboots.com/" target="_blank">Live Demo</a>
           </div>
         </div>
         <div class="poster-card">
           <div class="poster"><img src="assets/img/codepen.png" alt="Location Unknown"></div>
           <div class="details">
-            <h1>Code Pen Fun</h1>
+            <h1>Code Pen Projects</h1>
             <div class="tags">
               <span class="tag">Javascript</span>
               <span class="tag">HTML</span>
               <span class="tag">CSS</span>
             </div>
             <p class="desc">
-              A retro designed contact form on codepen.
+              A collection of UI/UX components I have made.
             </p>
+            <a class="button-1" href="https://codepen.io/aidan-aarts-the-scripter" target="_blank">Live Demo</a>
           </div>
         </div>
       </div>
@@ -188,7 +204,7 @@
           <h2>Get in touch</h2>
         </div>
         <!--Contact Form-->
-        <form class="contact-form row">
+        <form class="contact-form row" onsubmit="sendEmail(); reset(); return false;">
           <div class="form-field">
             <input id="name" class="input-text js-input" type="text" placeholder="Name" required>
           </div>
@@ -196,10 +212,10 @@
             <input id="email" class="input-text js-input" type="email" placeholder="Your E-mail" required>
          </div>
          <div class="form-field">
-            <input id="message" class="input-text js-input" type="text" placeholder="Message" required>
+            <textarea id="message" class="input-text js-input" rows="4" placeholder="Message"></textarea>
          </div>
          <div class="form-field col x-100 align-center">
-          <input id="submit-btn" class="submit-btn" type="submit" value="Send">
+          <button id="submit-btn" class="submit-btn" type="submit" onclick="sendMail()">Send</button>
        </div>
         </form>
       </div>
@@ -207,7 +223,19 @@
   </div>
   <div class="footer">
     <div class="row">
-      <p>© 2023 Aidan Aarts</p>
+      <div class="col">      <p>© 2023 Aidan Aarts</p>
+      </div>
+      <div class='footer-social'>
+        <a class='text-decoration-none' href='https://www.linkedin.com/in/aidan-aarts/' target="_blank">LinkedIn</a>
+        <span class='mx-2 black'>
+          |
+        </span>
+        <a class='text-decoration-none' href='https://github.com/aidanaarts' target="_blank">Github</a>
+        <span class='mx-2 black'>
+          |
+        </span>
+        <a class='text-decoration-none' href='assets/img/frontend-developer-portfolio-resume.pdf' target="_blank">Resume</a>
+      </div>
     </div>
   </div>
 </div>
@@ -221,6 +249,16 @@
 
 <!--Icons-->
 <script src="https://kit.fontawesome.com/9283397ccd.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
+<!--Contact Form-->
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("MguaMdlLAnjVol_dK");
+   })();
+</script>
 </body>
 </html>

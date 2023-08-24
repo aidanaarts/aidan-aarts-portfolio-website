@@ -244,11 +244,12 @@ a {
 }
 
 section {
-  min-height: 915px;
-  height: 800px;
+  height:fit-content;
   width: 100%;
 }
 section.hero {
+  min-height: 915px;
+  height: 800px;
   background-color: #0f172a;
   border-bottom-right-radius: 15vw;
   position: relative;
@@ -282,7 +283,7 @@ section.hero:after {
 
 section.projects {
   background-color: #e8d1f6;
-  height:800px;
+  height:fit-content;
 }
 .about-card {
   justify-content: center;
@@ -321,6 +322,10 @@ section.about-me{
 .socials {
   margin-top: 10px;
   text-align: center;
+  margin-bottom: 60px;
+}
+.socials a {
+  color: black;
 }
 .socials ul {
   display:inline-flex;
@@ -329,14 +334,14 @@ section.about-me{
   padding: 0;
   overflow: hidden;
 }
-.socials ul li i {
+.socials ul li a {
   display:inline-block;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 30px;
 }
-.socials i:hover {
+.socials a:hover {
     color:#00BCD4;
     transition:all 0.25s;
     font-size:40px;
@@ -344,15 +349,14 @@ section.about-me{
 
 /*End About Me Section*/
 
-section.five {
-  background-color: #29639c;
-}
+
 .contact {
   background-color: #29639c;
   min-height: 775px;
   height: 775px;
   width: 100%;
 }
+
 @media screen and (min-width: 1200px) {
   .hero {
     height: 75vh;
@@ -364,6 +368,9 @@ section.five {
 @media screen and (max-width: 1199px) {
   .hero #video-bg {
     object-position: 0 0vw;
+  }
+  section .projects{
+    height:fit-content;
   }
 }
 @media screen and (max-width: 767px) {
@@ -437,7 +444,14 @@ section.five {
   border: 2px solid rgba(0, 0, 0, 0.6);
   background-color: #dadad3;
 }
-
+.contact-form textarea {
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  background-color: #dadad3;
+}
+.contact-form button {
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  background-color: #dadad3;
+}
 .contact .row {
   justify-content: center;
 
@@ -526,6 +540,7 @@ a {
   justify-content: center;
   gap: 24px;
   margin-top:70px;
+  padding-bottom: 200px;
 }
 
 .poster-card {
@@ -675,16 +690,27 @@ a {
 }
 
 .button-1 {
-  display: flex;
-  gap: .375em;
   margin-bottom: .875em;
-  font-size: .85em;
+  font-size: 1.00em;
   padding: .35rem .65rem;
-  color: black;
-  border: 1.5px solid rgba(200 200 200 / 0.4);
+  color: white;
+  border: 2.5px solid rgba(200 200 200 / 0.4);
   border-radius: 4px;
   border-radius: 50px;
+  background-color: transparent;
 }
+
 .button-1:hover {
-  background-color: #299c5d;
+  background-color: rgba(22, 22, 20, 0.7);
+  border-color: rgba(216, 216, 216, 0.7);
+}
+
+.footer p {
+  width:fit-content;
+}
+.footer-social{
+  width:fit-content;
+}
+.footer-social a {
+  color:black;
 }
