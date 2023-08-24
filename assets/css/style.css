@@ -24,10 +24,14 @@ body {
   color: #212121;
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h5 {
   font-weight: 900;
 }
 
+
+h4 {
+  font-weight: 600;
+}
 h1 {
   font-size: 3em;
 }
@@ -240,7 +244,7 @@ a {
 }
 
 section {
-  min-height: 800px;
+  min-height: 915px;
   height: 800px;
   width: 100%;
 }
@@ -272,9 +276,10 @@ section.hero:after {
   opacity:0;
   transition:all 1s;
 }
-.show-card {
-  opacity:1;
+.title {
+  text-align: center;
 }
+
 section.projects {
   background-color: #e8d1f6;
   height:800px;
@@ -294,21 +299,6 @@ section.projects {
 .about-text {
   width:70vw;
 }
-.project-card {
-  border: 1px solid;
-  max-width: 350px;
-  margin: 30px;
-  position: relative;
-  top: 50%;
-  background-color: #fff;
-  align-items: center;
-  box-shadow: 10px 10px;
-  height:100%;
-}
-.project-card .title-row h2 {
-  position:absolute;
-  bottom:50px;
-}
 /* About Me Section */
 section.about-me{
   background-color: #efefef;
@@ -321,9 +311,15 @@ section.about-me{
   text-align:center;
 }
 .about-me .title h2{
-  padding-top: 40px;
+  padding-bottom: 40px;
+  font-size:3rem;
+}
+.body-title {
+  padding:10px;
+  margin:10px;
 }
 .socials {
+  margin-top: 10px;
   text-align: center;
 }
 .socials ul {
@@ -347,16 +343,14 @@ section.about-me{
 }
 
 /*End About Me Section*/
-section.four {
-  background-color: #00BCD4;
-}
+
 section.five {
   background-color: #29639c;
 }
 .contact {
   background-color: #29639c;
-  min-height: 600px;
-  height: 600px;
+  min-height: 775px;
+  height: 775px;
   width: 100%;
 }
 @media screen and (min-width: 1200px) {
@@ -424,12 +418,12 @@ section.five {
   border: 1px solid;
   max-width: 350px;
   margin: 30px;
+  margin-top: 135px;
   position: relative;
   top: 50%;
   background-color: #fff;
   align-items: center;
   box-shadow: 10px 10px;
-
 }
 .contact-section h2 {
   text-align: center;
@@ -490,80 +484,24 @@ section.five {
     align-content: center;
     justify-content: space-evenly;
     align-items: center;
-    max-width: 800px;
-    margin: 0 auto;
 }
-.title {
+.projects-section .title {
   text-align:center;
+  padding-top:135px;
 }
-.card {
-  margin-top: 60px;
-  border-radius: 22px;
-  background: #efefef;
-  box-shadow: 15px 15px 30px rgba(164, 170, 173, 0.5),
-      -15px -15px 30px rgba(255, 255, 255, 0.8);
-  max-width: 400px;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
-  border:none;
+.projects-section .title h2{
+  font-size:3rem;
 }
-.card-grid {
-  padding-left: 30px;
-  padding-right: 30px;
+.about-col img {
+  width:200px;
+  height:200px
 }
-.card img {
-  padding:15px;
-  border-radius: 22px;
-}
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 25px 25px 40px rgba(164, 170, 173, 0.7),
-      -25px -25px 40px rgba(255, 255, 255, 1);
-}
-
-.card .texts {
-  margin: 1rem 2rem 1.5rem 2rem;
-}
-.card img {
-  width: 100%;
-  max-height: 250px;
-  object-fit: cover;
-}
-.card .texts h2 {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #3a5258;
-  margin-bottom: 0.5rem;
-}
-.card .buttons {
-  display: flex;
-  margin: 1rem;
-}
-.card .buttons input[type="button"] {
-  border-radius: 10px;
-  background: #dfe6e9;
-  box-shadow: 7px 7px 13px rgba(190, 196, 198, 0.8),
-      -7px -7px 13px rgba(255, 255, 255, 0.7);
-  padding: 0.75rem 1.5rem;
-  border: none;
-  outline: none;
-  transition: all 0.1s ease-in-out;
-  cursor: pointer;
-}
-.card .buttons input[type="button"]:hover {
-  box-shadow: 10px 10px 15px rgba(190, 196, 198, 1),
-      -10px -10px 15px rgba(255, 255, 255, 0.9);
-}
-.card .buttons input[type="button"]:active {
-  box-shadow: 0 0 0 #bec4c6, 0 0 0 #ffffff, inset 7px 7px 13px #bec4c6,
-      inset -7px -7px 13px #ffffff;
-}
-
 /* Footer Style */
 
 .footer {
   border-top: 1px solid;
   padding:40px;
+  color:black;
   background-color: #29639c;
 }
 
@@ -572,7 +510,181 @@ a {
 }
 
 .about-body {
-  margin-top: 60px;
   margin-right: 40px;
   margin-left: 40px;
+  margin-top:70px;
+}
+
+.wrapper {
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top:70px;
+}
+
+.poster-card {
+  position: relative;
+  width: 325px;
+  height: 450px;
+  background: #000;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 5px 10px #42324d;
+}
+
+.poster {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.poster::before {
+  content: '';
+  position: absolute;
+  bottom: -45%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: .3s;
+}
+
+.poster-card:hover .poster::before {
+  bottom: 0;
+}
+
+.poster img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .3s;
+}
+
+.poster-card:hover .poster img {
+  transform: scale(1.1);
+}
+
+.details {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  padding: 1.5em 1.5em 2em;
+  background: #000a;
+  backdrop-filter: blur(16px) saturate(120%);
+  transition: .3s;
+  color: #fff;
+  z-index: 2;
+}
+
+.poster-card:hover .details {
+  bottom: 0;
+}
+
+.details h1,
+.details h2 {
+  font-weight: 700;
+}
+
+.details h1 {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+.details h2 {
+  font-weight: 400;
+  font-size: 1em;
+  margin-bottom: 10px;
+  opacity: .6;
+}
+
+.details .rating {
+  position: relative;
+  margin-bottom: 15px;
+  display: flex;
+  gap: .25em;
+}
+
+.details .rating i {
+  color: #e3c414;
+}
+
+.details .rating span {
+  margin-left: 0.25em;
+}
+
+.details .tags {
+  display: flex;
+  gap: .375em;
+  margin-bottom: .875em;
+  font-size: .85em;
+}
+
+.details .tags span {
+  padding: .35rem .65rem;
+  color: #fff;
+  border: 1.5px solid rgba(255 255 255 / 0.4);
+  border-radius: 4px;
+  border-radius: 50px;
+}
+
+.details .desc {
+  color: #fff;
+  opacity: .8;
+  line-height: 1.5;
+  margin-bottom: 1em;
+}
+
+.details .cast h3 {
+  margin-bottom: .5em;
+}
+
+.details .cast ul {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  width: 100%;
+}
+
+.details .cast ul li {
+  list-style: none;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1.5px solid #fff;
+}
+
+.details .cast ul li img {
+  width: 100%;
+  height: 100%;
+}
+
+.button-1 {
+  display: flex;
+  gap: .375em;
+  margin-bottom: .875em;
+  font-size: .85em;
+  padding: .35rem .65rem;
+  color: black;
+  border: 1.5px solid rgba(200 200 200 / 0.4);
+  border-radius: 4px;
+  border-radius: 50px;
+}
+.button-1:hover {
+  background-color: #299c5d;
 }
