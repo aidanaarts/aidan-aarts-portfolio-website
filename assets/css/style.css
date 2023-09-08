@@ -88,12 +88,6 @@ a {
   background-color: #00BCD4;
 }
 
-.bg-topographic {
-  background-image: url(https://assets.codepen.io/319606/bg-topographic.svg);
-  background-size: 5000px;
-  opacity: 0.1;
-  pointer-events: none;
-}
 
 .custom-cursor {
   position: fixed;
@@ -111,18 +105,6 @@ a {
 
 .custom-cursor--link {
   transform: translate(-50%, -50%) scale(1.25);
-}
-
-.swoosh {
-  background-image: url("https://assets.codepen.io/319606/2023-logo-swoosh.svg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  top: 20px;
-  left: 18px;
-  width: 230px;
-  height: 45px;
-  z-index: 1000;
-  background-position: left;
 }
 
 .sticky-nav {
@@ -239,7 +221,6 @@ a {
   background-position: center center;
   background-size: cover;
   object-fit: cover;
-  /*transform: rotate(180deg);*/
 }
 
 section {
@@ -280,10 +261,11 @@ section.hero:after {
   text-align: center;
 }
 
-section.projects {
-  background-color: #e8d1f6;
-  height:fit-content;
-}
+
+
+
+/* About Me Styling */
+
 .about-card {
   justify-content: center;
   border: 1px solid;
@@ -299,7 +281,6 @@ section.projects {
 .about-text {
   width:70vw;
 }
-/* About Me Section */
 section.about-me{
   background-color: #efefef;
 }
@@ -493,6 +474,10 @@ section.about-me{
 }
 
 /*Projects Style*/
+section.projects {
+  background-color: #e8d1f6;
+  height:fit-content;
+}
 .projects-section {
     align-content: center;
     justify-content: space-evenly;
@@ -508,24 +493,6 @@ section.about-me{
 .about-col img {
   width:200px;
   height:200px
-}
-/* Footer Style */
-
-.footer {
-  border-top: 1px solid;
-  padding:40px;
-  color:black;
-  background-color: #29639c;
-}
-
-a {
-  text-decoration: none;
-}
-
-.about-body {
-  margin-right: 40px;
-  margin-left: 40px;
-  margin-top:70px;
 }
 
 .wrapper {
@@ -625,20 +592,6 @@ a {
   opacity: .6;
 }
 
-.details .rating {
-  position: relative;
-  margin-bottom: 15px;
-  display: flex;
-  gap: .25em;
-}
-
-.details .rating i {
-  color: #e3c414;
-}
-
-.details .rating span {
-  margin-left: 0.25em;
-}
 
 .details .tags {
   display: flex;
@@ -703,6 +656,27 @@ a {
   background-color: rgba(22, 22, 20, 0.7);
   border-color: rgba(216, 216, 216, 0.7);
 }
+
+
+/* Footer Style */
+
+.footer {
+  border-top: 1px solid;
+  padding:40px;
+  color:black;
+  background-color: #29639c;
+}
+
+a {
+  text-decoration: none;
+}
+
+.about-body {
+  margin-right: 40px;
+  margin-left: 40px;
+  margin-top:70px;
+}
+
 
 .footer p {
   width:fit-content;
